@@ -1,0 +1,22 @@
+---
+import "../styles.css";
+import SiteFooter from "../components/SiteFooter.astro";
+
+const items = [
+  { name: "Astro Analytics", status: "Experimental", body: "Provider-flexible analytics with explicit environment control and a Starlight-aware wrapper." },
+  { name: "Astro Bluesky Comments", status: "Experimental", body: "A reusable route from an Astro page to conversation on Bluesky." },
+  { name: "Site patterns", status: "In preparation", body: "Small, inspectable examples of content collections, static delivery, and platform integrations." },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><meta name="description" content="CodeWorksLabs demonstrations and previews for Astro." /><title>Astro Demos — CodeWorksLabs</title></head>
+  <body>
+    <header><a href="https://codeworkslabs.dev/">CWL / LABS</a><div class="header-navs"><nav aria-label="Primary navigation"><a href="https://codeworkslabs.dev/products/">Products</a><a href="https://codeworkslabs.dev/platforms/">Platforms</a><a href="https://demo.codeworkslabs.dev/">Demos</a><a href="https://docs.codeworkslabs.dev/">Docs</a></nav><nav class="utility-navigation" aria-label="Help and community"><a href="https://codeworkslabs.dev/blog/">Blog</a><a href="https://codeworkslabs.dev/support/">Support</a><a href="https://forum.codeworkslabs.dev/">Forum ↗</a></nav></div></header>
+    <main><section class="hero"><div class="orb">A</div><p>PLATFORM / ASTRO</p><h1>Fast pages.<br /><em>Thoughtful systems.</em></h1><span>Working examples will appear here only when the exact demonstration is ready and verified.</span></section><section class="list">{items.map((item, index) => <article><b>0{index + 1}</b><div><small>{item.status}</small><h2>{item.name}</h2><p>{item.body}</p></div><span>Preview record</span></article>)}</section></main>
+    <SiteFooter theme="light" />
+  </body>
+</html>
+
+<style>header nav,.header-navs{display:flex;align-items:center;gap:1.5rem}.utility-navigation{gap:.55rem}.utility-navigation a{padding:.42rem .62rem;border:1px solid currentColor;color:#087c99}.utility-navigation a:last-child{color:#c74638}@media(max-width:700px){header{gap:1rem;flex-wrap:wrap}.header-navs{width:100%;flex-wrap:wrap;gap:.75rem}.header-navs nav:first-child{width:100%;gap:.75rem;justify-content:space-between}.utility-navigation{gap:.55rem}}</style>
